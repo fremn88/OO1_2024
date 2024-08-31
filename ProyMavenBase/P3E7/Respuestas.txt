@@ -1,0 +1,12 @@
+1. listado de metodos invocados por cada mensaje enviado:
+
+Gerente alan --> alan.aportes();
+-montoBasico esta en class Gerente. --> 57000*0.05=2850
+
+Gerente alan -->alan.sueldoBasico();
+-sueldoBasico no esta en class Gerente. Busca el metodo en superclase EmpleadoJerarquico, lo encuentra.
+este metodo llama a su vez al metodo del mismo nombre de su superclase (clase Empleado) 
+el metodo sueldoBasico de la clase Empleado devuelve this.montoBasico + this aportes. Estos "this" hacen referencia al objeto instanciado, es decir a Gerente alan.
+Bono por categoria no esta en class gerente, utiliza el siguiente que encuentra en EmpleadoJerarquico.
++57000+57000*0.05+8000=67850
+
