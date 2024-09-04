@@ -8,20 +8,16 @@ public class Ticket {
 	private Integer cantidadDeProductos;
 	private double precioTotal;
 	private double pesoTotal;
-	
-	public Ticket() {
-		
-	}
-	
+
 	public Ticket(Integer cantidadProductos, double precioTotal, double pesoTotal) {
 		this.fecha = LocalDate.now();
 		this.cantidadDeProductos = cantidadProductos;
 		this.precioTotal = precioTotal;
 		this.pesoTotal = pesoTotal;
 	}
-	
+
 	public double impuesto() {
-		return this.precioTotal*0.21;
+		return this.precioTotal * 0.21;
 	}
 
 	public LocalDate getFecha() {
@@ -39,7 +35,5 @@ public class Ticket {
 	public double getPesoTotal() {
 		return pesoTotal;
 	}
-	
-	
-	
+
 }

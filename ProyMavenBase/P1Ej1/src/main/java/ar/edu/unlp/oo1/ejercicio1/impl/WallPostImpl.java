@@ -12,31 +12,26 @@ public class WallPostImpl implements WallPost {
 	 * Complete con su implementación
 	 */
 	private String texto;
-	
+
 	private Integer cantidadLikes;
-	
+
 	private boolean destacado;
-	
-	
-	
+
 	public WallPostImpl() {
-		super();
 		this.texto = "Undefined post";
 		this.cantidadLikes = 0;
 		this.destacado = false;
 	}
 
 	/*
-	 * Este mensaje se utiliza para que una instancia de Wallpost se muestre de forma adecuada
+	 * Este mensaje se utiliza para que una instancia de Wallpost se muestre de
+	 * forma adecuada
 	 */
-    @Override
-    public String toString() {
-        return "WallPost {" +
-            "text: " + getText() +
-            ", likes: '" + getLikes() + "'" +
-            ", featured: '" + isFeatured() + "'" +
-            "}";
-    }
+	@Override
+	public String toString() {
+		return "WallPost {" + "text: " + getText() + ", likes: '" + getLikes() + "'" + ", featured: '" + isFeatured()
+				+ "'" + "}";
+	}
 
 	@Override
 	public String getText() {
@@ -46,7 +41,7 @@ public class WallPostImpl implements WallPost {
 	@Override
 	public void setText(String text) {
 		this.texto = text;
-		
+
 	}
 
 	@Override
@@ -57,12 +52,12 @@ public class WallPostImpl implements WallPost {
 	@Override
 	public void like() {
 		this.cantidadLikes++;
-		
+
 	}
 
 	@Override
 	public void dislike() {
-		if(this.cantidadLikes>0) {
+		if (this.cantidadLikes > 0) {
 			this.cantidadLikes--;
 		}
 	}
