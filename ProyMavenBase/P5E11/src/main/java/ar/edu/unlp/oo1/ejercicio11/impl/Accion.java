@@ -1,11 +1,11 @@
 package ar.edu.unlp.oo1.ejercicio11.impl;
 
-public class Accion extends Inversion {
+public class Accion implements Inversion {
 
 	private String nombre;
 	private int cantidad;
 	private int valorUnitario;
-	
+
 	public Accion(String nombre, int cantidad, int valorUnitario) {
 		super();
 		this.nombre = nombre;
@@ -33,12 +33,8 @@ public class Accion extends Inversion {
 		return nombre;
 	}
 
-	@Override
 	public double valor() {
-		return this.getCantidad()*this.getValorUnitario();
+		return this.getCantidad() * this.getValorUnitario();
 	}
-	
-	
-	
-	
+
 }

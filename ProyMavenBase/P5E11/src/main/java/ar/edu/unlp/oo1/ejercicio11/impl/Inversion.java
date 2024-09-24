@@ -1,7 +1,9 @@
 package ar.edu.unlp.oo1.ejercicio11.impl;
 
-public abstract class Inversion {
-	
-	public abstract double valor();
-	
+public interface Inversion {
+
+	public double valor();
+
+	// Para este ejercicio, se elige usar Interfaz dado que las clases Accion y
+	// Plazo fijo no comparten comportamiento comun.
 }

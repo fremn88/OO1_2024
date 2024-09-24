@@ -4,13 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Inversor {
-	
+
 	private List<Inversion> inversiones;
-	
+
 	public Inversor() {
 		this.inversiones = new ArrayList<Inversion>();
 	}
-	
+
 	public List<Inversion> getInversiones() {
 		return inversiones;
 	}

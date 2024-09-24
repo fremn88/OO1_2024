@@ -50,6 +50,8 @@ public abstract class Cuenta {
 	 * visibilidad, tipo de retorno, nombre y parametros ingresados si los requiere,
 	 * pero sin cuerpo. Es de implementacion obligatoria por las subclases que la
 	 * extienden.
-	 * Tests ??
+	 * Tests -> regla general: 1 test por c/metodo (excepto getters y setters). Testear borde y part equivalente (siempre que se pueda)
+	 * Clase abs vs Interfaz: la primera permite implementacion de metodos y atributos, sirve cuando hay comportamiento o atributos en comun, evitando repeticion de codigo.
+	 * Intefaz solo permite metodos sin implementar; util en caso de objetos sin relaciones comunes pero que deben cumplir cierto comportamiento (ej: colecicones).
 	 */
 }

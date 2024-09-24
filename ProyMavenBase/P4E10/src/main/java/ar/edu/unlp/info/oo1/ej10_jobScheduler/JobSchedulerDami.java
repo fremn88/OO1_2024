@@ -35,5 +35,18 @@ public abstract class JobSchedulerDami {
 		this.strategy = aStrategy;
 	}
 
-	protected abstract JobDescription next();
+	public JobDescription next() {
+		JobDescription Job = nextJob();
+		unschedule(Job);
+		return Job;
+	}
+
+	protected abstract JobDescription nextJob();
+
+	/*
+	 * NOTAS: se segrega el minimo codigo posible a las clases hijas de la clase
+	 * abstracta. Se busca que esta ultima nuclee todos los comportamientos comunes,
+	 * por ejemplo en metodo next() es comportamiento comub el "uneschedule"
+	 */
+
 }

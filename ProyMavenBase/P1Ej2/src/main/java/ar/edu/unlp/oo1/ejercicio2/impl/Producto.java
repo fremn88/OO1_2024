@@ -11,6 +11,10 @@ public class Producto {
 		this.precioPorKilo = precioPorKilo;
 		this.descripcion = descripcion;
 	}
+	
+	public Producto() {
+		
+	}
 
 	public double getPeso() {
 		return peso;

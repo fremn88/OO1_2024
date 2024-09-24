@@ -4,14 +4,19 @@ public class CuentaCorriente extends Cuenta {
 
 	private double saldoDescubierto;
 
+	public double getSaldoDescubierto() {
+		return saldoDescubierto;
+	}
+
+	public void setSaldoDescubierto(double saldoDescubierto) {
+		this.saldoDescubierto = saldoDescubierto;
+	}
+
 	public CuentaCorriente() {
 		saldoDescubierto = 0;
 	}
 
 	public boolean puedeExtraer(double monto) {
-		if ((getSaldo() + saldoDescubierto) > monto * 1.02) {
-			return true;	
-		} else
-			return false;
+		return getSaldo() + saldoDescubierto >= monto;
 	}
 }

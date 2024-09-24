@@ -3,12 +3,12 @@ package ar.edu.unlp.oo1.ejercicio11.impl;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 
-public class PlazoFijo extends Inversion {
-	
+public class PlazoFijo implements Inversion {
+
 	private LocalDate fechaConstitucion;
 	private double montoDepositado;
 	private double porcentajeInteresDiario;
-	
+
 	public PlazoFijo(LocalDate fechaConstitucion, double montoDepositado, double porcentajeInteresDiario) {
 		super();
 		this.fechaConstitucion = fechaConstitucion;
@@ -28,9 +28,8 @@ public class PlazoFijo extends Inversion {
 		return porcentajeInteresDiario;
 	}
 
-	@Override
 	public double valor() {
 		double dias = this.getFechaConstitucion().until(LocalDate.now(), ChronoUnit.DAYS);
-		return this.getMontoDepositado()*(1+this.getPorcentajeInteresDiario()/100*dias);
+		return this.getMontoDepositado() * (1 + this.getPorcentajeInteresDiario() / 100 * dias);
 	}
 }
