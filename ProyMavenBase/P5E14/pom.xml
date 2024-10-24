@@ -5,11 +5,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>ar.edu.unlp.oo1</groupId>
-	<artifactId>ejercicio12-VolumenYSuperficie</artifactId>
+	<artifactId>ejercicio14-IntervaloTiempo</artifactId>
 	<version>1.0.0</version>
-	<name>ejercicio12-VolumenYSuperficie</name>
+	<name>ejercicio14-IntervaloTiempo</name>
 	<packaging>jar</packaging>
-	<description>ejercicio 12 VolumenYSuperficie</description>
+	<description>ejercicio 12 IntervaloTiempo</description>
 	<properties>
 		<maven.version>3.8.1</maven.version>
 		<java.version>11</java.version>
@@ -45,7 +45,7 @@
 						<configuration>
 							<archive>
 								<manifest>
-									<mainClass>ar.edu.unlp.oo1.ejercicio12.ejercicio12Application</mainClass>
+									<mainClass>ar.edu.unlp.oo1.ejercicio14.ejercicio14Application</mainClass>
 								</manifest>
 							</archive>
 							<descriptorRefs>

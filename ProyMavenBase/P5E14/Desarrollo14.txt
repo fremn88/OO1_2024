@@ -1,0 +1,4 @@
+*crear fecha determinada: usar metodo of() estatico, de LocalDate. 
+devuelve instancia localdate con fecha determinada: of(int año, int mes, int dia)
+*isAfter, isBefore. Reciben ChronoLocalDate retornan boolean. Checks if this date is after/before the specified date.
+*until(ChronoLocalDate endDate) calcula periodo entre la fecha instancia y la recibida como parametro. Devuelve instancia de clase Periodo, donde tiene get dias, mes, año, como int.
