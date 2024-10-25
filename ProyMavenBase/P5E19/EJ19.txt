@@ -1,0 +1,25 @@
+-empresa
+-realiza envios
+-paquetes
+-interurbanos,locales,internacionales.
+-locales-opcion entrega rapida
+-fecha despacho, direccion origen, direccion destino, peso gramos. distancia KM (solo interurbanos)
+-cliete fisico - nombre,dir,DNI
+-cliente corporativo - nombEmpresa,dir,CUIT
+
+funcionalidad:
+-Agregar envio a un cliente: con un cliente y envio, se le egrega el envio.
+-Monto a pagar por los envios realizados en un periodo: con un cilente, fechas inicio y fin
+--envio local:  
+		entregas estandar costo fijo 1000 
+		entregas rapida costo adicional 500
+--envio interurbano: 
+		d<100 20$/gr
+		100<=d<=500 25$/gr
+		d>500 30$/gr
+--envio internacional:
+		5000 (cualq destino) + 10 $/gr para peso <= 1000g
+		5000 (cualq destino) + 12 $/gr para peso > 1000g
+		
+--si es persona fisica -10% descto.
+
