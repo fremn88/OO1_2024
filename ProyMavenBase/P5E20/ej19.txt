@@ -1,0 +1,17 @@
+empleados: nombre, apellido, cuil, fechaNac, hijosTiene, contratos
+contratos: fechaIni, fechaFin(opcional)
+tipos contrato_
+	1- porHora: indica el valor, numeroHoras/mes, fechaFin
+	2- dePlanta: sueldoMensual, montoConyugue, montoHijos. Sin fechaFin
+multiples contratos por empleado es posible, pero solo uno vigente.
+el contrato dePlanta siempre es el unico vigente.
+rl contrato porHora es activo cuando fechaFin>fechaActual
+
+implementar:
+*GenerarReciboSueldo
+se tiene en cuenta solo el contrato vigente. Contioene: nom, ape, cuil, antiguedad, fechaGenerado, montoTotal.
+calculo porHora: valorHora*numeroHoras
+calculo dePlanta: sueldoMensual+montoHijos
+A lo anterior sumarle antiguedad: 5años 30%, 10años 50%, 15años 70%, 20años 100%
+Antiguedad = suma de duracion de todos sus contratos.
+???? duracion dePlanta???? ir actualizando atributo antiguedad a medida que se agregan contratos: planta->horas sumaria FechaActual-Finicio del contrato anterior.

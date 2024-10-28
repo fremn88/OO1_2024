@@ -5,11 +5,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>ar.edu.unlp.oo1</groupId>
-	<artifactId>ejercicio17-AlquilerPropiedades</artifactId>
+	<artifactId>ejercicio20-LiquidacionHaberes</artifactId>
 	<version>1.0.0</version>
-	<name>ejercicio17-AlquilerPropiedades</name>
+	<name>ejercicio20-LiquidacionHaberes</name>
 	<packaging>jar</packaging>
-	<description>ejercicio 17 AlquilerPropiedades</description>
+	<description>ejercicio 20 LiquidacionHaberes</description>
 	<properties>
 		<maven.version>3.8.1</maven.version>
 		<java.version>11</java.version>
@@ -45,7 +45,7 @@
 						<configuration>
 							<archive>
 								<manifest>
-									<mainClass>ar.edu.unlp.oo1.ejercicio17.ejercicio17Application</mainClass>
+									<mainClass>ar.edu.unlp.oo1.ejercicio20.ejercicio20Application</mainClass>
 								</manifest>
 							</archive>
 							<descriptorRefs>
