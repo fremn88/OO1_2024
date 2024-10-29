@@ -9,4 +9,7 @@ public class PersonaJuridica extends Cliente {
 		this.CUIT = CUIT;
 	}
 
+	public double descuento() {
+		return 1;
+	}
 }

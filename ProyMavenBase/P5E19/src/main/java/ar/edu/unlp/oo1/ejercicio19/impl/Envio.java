@@ -2,6 +2,8 @@ package ar.edu.unlp.oo1.ejercicio19.impl;
 
 import java.time.LocalDate;
 
+import ar.edu.unlp.oo1.ejercicio14.impl.Lapse;
+
 public abstract class Envio {
 	
 	protected double peso;
@@ -33,5 +35,9 @@ public abstract class Envio {
 	}
 
 	public abstract double montoAPagar();
+	
+	public boolean estaIncluido(Lapse ventanaDespacho) {
+		return ventanaDespacho.includesDate(despacho);
+	}
 	
 }

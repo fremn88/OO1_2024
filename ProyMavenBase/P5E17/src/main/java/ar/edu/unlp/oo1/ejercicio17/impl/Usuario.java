@@ -15,41 +15,27 @@ public class Usuario {
 	@SuppressWarnings("unused")
 	private Integer DNI;
 	
-	private List<Reserva> reservas;
 	private List<Propiedad> propiedades;//propiedades de las cuales el usuario es dueño
 	
 	public Usuario(String nombre, String direccion, Integer DNI) {
 		this.nombre = nombre;
 		this.direccion = direccion;
 		this.DNI = DNI;
-		reservas = new ArrayList<Reserva>();
 		propiedades = new ArrayList<Propiedad>();
-	}
-	
-	//???como evalua desde un usario si la propiedad esta disponible??Hay propiedades de distintos usuarios.
-	public boolean propiedadEstaDisponible(Propiedad p, DateLapse l) {
-		boolean dispo = propiedades.contains(p);
-		if(dispo) {
-			dispo = p.estoyDisponible(l);
-		}
-		return dispo;
 	}
 	
 	
 	public Reserva crearReserva(Propiedad p, DateLapse l) {
-		if(propiedadEstaDisponible(p,l)) {
-			Reserva r = new Reserva(p,l);
-			reservas.add(r);
+		if(p.estoyDisponible(l)) {
+			Reserva r = new Reserva(p,l,this);
 			p.addReserva(r);
 			return r;
 		} else return null;
 	}
 	
 	public void cancelarReserva(Reserva r) {
-		if(!r.getPeriodoReserva().includesDate(LocalDate.now())) {
-			Propiedad prop = r.getPropiedadReservada();
-			prop.removerReserva(r);
-			reservas.remove(r);
+		if(r.reservaNoEstaEnCurso(LocalDate.now())) {
+			r.getPropiedadReservada().removerReserva(r);;
 		}
 	}
 	
@@ -66,7 +52,7 @@ public class Usuario {
 		if(!r.getPeriodoReserva().includesDate(LocalDate.now())) {
 			Propiedad prop = r.getPropiedadReservada();
 			prop.removerReserva(r);
-			reservas.remove(r);
+
 		}
 	}
 	
@@ -74,8 +60,6 @@ public class Usuario {
 		this.propiedades.add(p);
 	}
 
-	public List<Reserva> getReservas() {
-		return reservas;
-	}
+
 	
 }

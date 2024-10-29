@@ -19,7 +19,7 @@ public abstract class Cliente {
 	}
 	
 	public double montoAPagarPeriodo(Lapse periodo) {
-		return envios.stream().filter(e->periodo.includesDate(e.getDespacho())==true).mapToDouble(e->e.montoAPagar()).sum();
+		return envios.stream().filter(e->e.estaIncluido(periodo)).mapToDouble(e->e.montoAPagar()).sum()*descuento();
 	}
 	
 	public void agregarEnvio (Envio e) {
@@ -38,6 +38,6 @@ public abstract class Cliente {
 		return envios;
 	}
 	
-	
+	public abstract double descuento();
 	
 }
