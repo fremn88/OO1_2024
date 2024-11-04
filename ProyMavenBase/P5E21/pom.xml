@@ -5,11 +5,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>ar.edu.unlp.oo1</groupId>
-	<artifactId>ejercicio20-LiquidacionHaberes</artifactId>
+	<artifactId>ejercicio21-Bag</artifactId>
 	<version>1.0.0</version>
-	<name>ejercicio20-LiquidacionHaberes</name>
+	<name>ejercicio21-Bag</name>
 	<packaging>jar</packaging>
-	<description>ejercicio 20 LiquidacionHaberes</description>
+	<description>ejercicio 21 Bag</description>
 	<properties>
 		<maven.version>3.8.1</maven.version>
 		<java.version>11</java.version>
@@ -50,7 +50,7 @@
 						<configuration>
 							<archive>
 								<manifest>
-									<mainClass>ar.edu.unlp.oo1.ejercicio20.ejercicio20Application</mainClass>
+									<mainClass>ar.edu.unlp.oo1.ejercicio21.ejercicio21Application</mainClass>
 								</manifest>
 							</archive>
 							<descriptorRefs>

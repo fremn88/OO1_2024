@@ -15,3 +15,7 @@ calculo dePlanta: sueldoMensual+montoHijos
 A lo anterior sumarle antiguedad: 5años 30%, 10años 50%, 15años 70%, 20años 100%
 Antiguedad = suma de duracion de todos sus contratos.
 ???? duracion dePlanta???? ir actualizando atributo antiguedad a medida que se agregan contratos: planta->horas sumaria FechaActual-Finicio del contrato anterior.
+
+**suposicion: contrato en planta no termina nunca. Es decir, descarta la posiblidad de que un contrato de este tipo se termine.
+Por lo tanto, un empleado podra tener una coleccion de 0 a N contratos por hora, y 0 o 1 contrato por planta.
+De esto, la antiguedad se calcula como la suma de la duracion de cada contrato ( cada contrato debe saber responder la consulta duracion, con el caso especial para contrato por planta donde la duracion es fecha actual menos fecha inicial )
