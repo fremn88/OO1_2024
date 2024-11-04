@@ -1,6 +1,7 @@
 package ar.edu.unlp.oo1.ejercicio21.impl;
 
 import java.util.AbstractCollection;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
@@ -9,8 +10,7 @@ public class BagImpl<T> extends AbstractCollection<T> implements Bag<T> {
     Map<T, Integer> elements;
 
     public BagImpl() {
-        // TODO Completar con la instanciación adecuada
-        // this.elements = ....
+    	this.elements = new HashMap<T, Integer>();
     }
 
     @Override
@@ -27,7 +27,7 @@ public class BagImpl<T> extends AbstractCollection<T> implements Bag<T> {
 
     @Override
     public void removeOccurrence(T element) {
-    	if(elements.get(element)>0)
+    	if(elements.get(element)>0);
     }
 
     @Override
