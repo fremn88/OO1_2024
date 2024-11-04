@@ -13,10 +13,15 @@ public class BagImpl<T> extends AbstractCollection<T> implements Bag<T> {
     	this.elements = new HashMap<T, Integer>();
     }
 
+    // como debo contemplar lel manejo de nulls ?
     @Override
     public boolean add(T element) {
         // retorna un boolean ??
-    	elements.put(element, elements.get(element)+1);
+    	if(elements.containsKey(element)) {
+    		elements.put(element, elements.get(element)+1);
+    	} else {
+    		elements.put(element, 1);
+    	}
         return true;
     }
 
@@ -27,7 +32,9 @@ public class BagImpl<T> extends AbstractCollection<T> implements Bag<T> {
 
     @Override
     public void removeOccurrence(T element) {
-    	if(elements.get(element)>0);
+    	if(elements.containsKey(element) && elements.get(element)>0) {
+    		elements.remove(element);
+    	}
     }
 
     @Override
