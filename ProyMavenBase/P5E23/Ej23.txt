@@ -1,0 +1,30 @@
+vendedores - productos disponibles a la venta
+clientes - pedidos de productos
+
+vendedores: nombre,direccion,productos venta.
+clientes: nombre,direccion,pedidos solicitados
+producto en venta: nombre,categoria,precio,unidadesDisp
+
+pago: alContado,6cuotas (a agregar otras)
+formasEnvio: retiroComercio,retiroCorreo,expressDom
+
+implementar
+
+*crearPedidoCliente
+-Dado: cliente,formaPago,formaEnvio,producto,cantidad
+verifica si hay disponibilidad, crea el pedido y descuenta las unidades del producto. No hace nada si no hay disponibilidad.
+
+*conocer cant de prod pedidos por categoria
+-Dado: cliente
+cuantos productos por categoria ha pedido el cliente. categorias "Electordomesticos, computadoras, hogar, et"
+
+*Calcular el costo total de un pedido
+-Dado_ pedido
+retorna costo total: preciofinal en base a forma pago + costo envio por formaEnvio
+++"al contado" el precio es = al del producto
+++"6cuotas" el precio incrementa 20%
+++"retiroComercio" no hay costo adicional.
+++"retiroCorreo" costo adicional 3000
+++"expressDom" costo 0.5$ / Km dist vendedor-cliemte - la  distancia se obtiene de clase CalculadoraDistancia, que entienden msj distanciaEntre(dir1, dir2) y retorna Km entre ellas, a efectos de la prueba, siempre retorna 100...
+
+

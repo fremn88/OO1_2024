@@ -12,6 +12,7 @@ import org.junit.jupiter.api.Test;
 public class MapTest {
 
 	private Map<String, Integer> map;
+	private double num;
 	
 	@BeforeEach
 	void setUp() throws Exception {
@@ -41,5 +42,6 @@ public class MapTest {
 		System.out.println("  -------  ");
 		//cantidad total de goles
 		System.out.println(map.values().stream().mapToInt(v->v).sum());
+
 	}
 }

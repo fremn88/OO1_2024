@@ -20,6 +20,7 @@ public class ClienteTest {
 	private Cliente c1, c2;
 	private Envio int1, int2, int3, int4, int5, locEstandar, locRapido, internac1, internac2, internac3;
 	DateLapse lapso;
+	private double num;
 	
 	@BeforeEach
 	void setUp() throws Exception {
@@ -62,7 +63,8 @@ public class ClienteTest {
 		assertEquals(4050,c1.montoAPagarPeriodo(lapso));
 		//monto a pagar por personaJuridica
 		assertEquals(4500,c2.montoAPagarPeriodo(lapso));
-		
+		num = 1;
+
 	}
 	
 }

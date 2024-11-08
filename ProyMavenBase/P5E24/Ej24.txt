@@ -1,0 +1,25 @@
+Usuario: nombre, saldo
+Usuario pasajero, conductor
+Registro excluyente, pasajero no es conductor y viceversa
+Conductor tiene vehiculo
+Vehiculo: dueño/conductor, descripcion, capacidad(incluye conductor), año fabricacion, valor.
+Viaje: origen,destino,costoTotal,vehiculo,fecha,dueñoVehiculo comparte gastos con los demas pasajeros.
+Usuarios pasajeros registran a viajes chequeando previamente capacidad vehicular, al menos dos dias de antelacion a la fecha, saldo >= 0.
+El viaje procesado descuenta costo del saldo de los integrantes del mismo, repartiendo el costo en partes iguales. Luego sobre ese monto se calculan bonificaciones: para conductor es 0.1% del valor del vehiculo. Para pasajero, 500$ si hizo algun viaje anteriormente. Se admite saldo < 0 luego de un viaje.
+
+implementar
+
+*Cargar Saldo para usuario: 
+Dado: usuario, monto. 
+Incrementa el monto en el saldo del usuario. Comision: conductores 1% auto < 5años, sino 10%. Pasajeros: 10% solo si no hizo ningun viaje en los ultimos 30 dias.
+
+*Dar alta viaje desde origen a destino:
+Se provee origen, destino, costo total, vehiculo, fecha.
+
+*Registrar pasajero para un viake: 
+Dado: pasajero, viaje
+registra ese pasajero para compartir el viaje.
+
+*Procesar viaje: el proceso del viaje efectua los cambios mencionados en el saldo de los participantes.
+
+

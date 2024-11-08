@@ -1,0 +1,51 @@
+medicos: nombre,fechaIngreso,honorarios.
+mascotas: nombre,fechaNac,especia(string)
+serviciosMedicos: consultas,vacunaciones,guarderia
+
+consultas-medico mascota fecha
+vacunacion medico mascota vacuna costo
+guarderia mascota cantDias
+
+implementar
+
+*Alta consulta medica para mascota
+Dado: medico,mascota
+Crea consulta para la mascota con fecha actual y la retorna
+// mascota crea consulta, la retorna (??y la almacena en sus servicios??)
+
+*Alta vacunacion p mascota
+Dado: medico mascota vacuna costo
+Crea vacunacion de la mascota con fecha actual y la retorna
+// idem consulta, ??
+
+*Alta guarderia p mascota
+Dado: mascota,cantDias
+Crea guarderia p mascota, con fecja actual como inicio y la retorna
+// idem 
+
+*Calculo costo servicio
+-consulta suma
+	honorarios
+	mat descartable 300
+	adic por atencion domingo 200
+	adic por antiguedad medico 100/anio
+// chequea fecha = domingo , consulta honorario medico, calcula antiguedad medico
+
+-vacunacion
+	honorarios
+	adicional descartable 500
+	adicional domingo 200
+	costo vacuna
+// idem anterior pero sin antiguedad 
+
+.guarderia
+	costo diario 500
+	descuento 10% si utilizo 5 o + servicios
+// cuenta los dias , y utiliza la cantidad de servicios de la mascota
+
+*Calcular recaudacion por mascota en una fecha dada
+dada una fecha, retorna monto acumulado por todos los servicios recibidos por la mascota.
+// hace un stream de los servicios, filtra aquellos que coincide fecha y hace map´calculandocosto, luego suma y retorna
+
+
+//vacuna conviene String?
