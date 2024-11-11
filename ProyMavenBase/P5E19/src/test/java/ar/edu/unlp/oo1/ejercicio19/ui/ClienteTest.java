@@ -18,9 +18,8 @@ import ar.edu.unlp.oo1.ejercicio19.impl.PersonaJuridica;
 public class ClienteTest {
 
 	private Cliente c1, c2;
-	private Envio int1, int2, int3, int4, int5, locEstandar, locRapido, internac1, internac2, internac3;
+	private Envio int1, int2, int3, int4, int5, internac1, internac2, internac3;
 	DateLapse lapso;
-	private double num;
 	
 	@BeforeEach
 	void setUp() throws Exception {
@@ -39,7 +38,8 @@ public class ClienteTest {
 	
 	@Test
 	public void InterurbanoTest() {
-		//particiones: por distancia. Valores borde: 100 500.
+		//particiones --> distancia <100, >100 y <500, >500
+		//Valores borde --> distancia 100 y 500.
 		assertEquals(2000,int1.montoAPagar());
 		assertEquals(2500,int2.montoAPagar());
 		assertEquals(2500,int3.montoAPagar());
@@ -48,7 +48,8 @@ public class ClienteTest {
 	}
 	
 	public void InternacionalTest() {
-		//particiones <1000 y >1000. limite: 1000
+		//particiones pesos <1000, >1000. 
+		//Valores borde 1000 peso
 		assertEquals(1000,internac1.montoAPagar());
 		assertEquals(10000,internac2.montoAPagar());
 		assertEquals(12600,internac3.montoAPagar());
@@ -63,8 +64,6 @@ public class ClienteTest {
 		assertEquals(4050,c1.montoAPagarPeriodo(lapso));
 		//monto a pagar por personaJuridica
 		assertEquals(4500,c2.montoAPagarPeriodo(lapso));
-		num = 1;
-
 	}
 	
 }

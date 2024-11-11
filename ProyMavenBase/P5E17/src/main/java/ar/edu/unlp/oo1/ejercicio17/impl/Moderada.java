@@ -4,15 +4,10 @@ import java.time.LocalDate;
 
 import ar.edu.unlp.oo1.ejercicio14.impl.DateLapse;
 
-public class Moderada extends PoliticaCancelacion {
+public class Moderada implements PoliticaCancelacion {
 	
-	public Moderada(String descripcion) {
-		super(descripcion);
-		// TODO Auto-generated constructor stub
-	}
-
 	@Override
-	public double calcularReembolso(Reserva r) {
+	public double montoReembolso(Reserva r) {
 		// previo a entrar a este metodo ya se verifica la fecha actual contra la reserva.
 		// moderada devuelve: 100% si es con >1semana anticipacion y 50% caso contrario
 		DateLapse diasCancelacion = new DateLapse(LocalDate.now(), r.getPeriodoReserva().getFrom());

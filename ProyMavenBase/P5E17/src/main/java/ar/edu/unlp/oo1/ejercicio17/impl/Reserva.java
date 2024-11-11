@@ -21,14 +21,6 @@ public class Reserva {
 		return propiedadReservada.getPrecioNoche()*periodoReserva.sizeInDays();
 	}
 
-	public Propiedad getPropiedadReservada() {
-		return propiedadReservada;
-	}
-
-	public DateLapse getPeriodoReserva() {
-		return periodoReserva;
-	}
-	
 	public boolean estaReservada(Propiedad p, DateLapse l) {
 		return propiedadReservada==p&&periodoReserva.overlaps(l);
 	}
@@ -36,4 +28,13 @@ public class Reserva {
 	public boolean reservaNoEstaEnCurso(LocalDate fecha) {
 		return !this.periodoReserva.includesDate(fecha);
 	}
+	
+	public Propiedad getPropiedadReservada() {
+		return propiedadReservada;
+	}
+
+	public DateLapse getPeriodoReserva() {
+		return periodoReserva;
+	}
+
 }

@@ -24,6 +24,15 @@ public class Usuario {
 		propiedades = new ArrayList<Propiedad>();
 	}
 	
+	public void cancelarReserva(Reserva r) {
+		if(r.reservaNoEstaEnCurso(LocalDate.now())) {
+			r.getPropiedadReservada().removerReserva(r);;
+		}
+	}	
+	
+	public double precioReserva(Reserva r) {
+		return r.calcularPrecio();
+	}
 	
 	public Reserva crearReserva(Propiedad p, DateLapse l) {
 		if(p.estoyDisponible(l)) {
@@ -32,15 +41,9 @@ public class Usuario {
 			return r;
 		} else return null;
 	}
-	
-	public void cancelarReserva(Reserva r) {
-		if(r.reservaNoEstaEnCurso(LocalDate.now())) {
-			r.getPropiedadReservada().removerReserva(r);;
-		}
-	}
-	
-	public double precioReserva(Reserva r) {
-		return r.calcularPrecio();
+
+	public void altaPropiedad(Propiedad p) {
+		this.propiedades.add(p);
 	}
 	
 	public double calcularIngresosPropietario(DateLapse l) {
@@ -55,11 +58,5 @@ public class Usuario {
 
 		}
 	}
-	
-	public void altaPropiedad(Propiedad p) {
-		this.propiedades.add(p);
-	}
 
-
-	
 }

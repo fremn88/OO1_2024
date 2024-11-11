@@ -38,7 +38,7 @@ public class Carpeta {
 	}
 
 	public Email contieneTextoCarpeta(String cadena) {
-		return emails.stream().filter(a -> a.contieneTextoEmail(cadena) == true).findFirst().orElse(null);
+		return emails.stream().filter(a -> a.contieneTextoEmail(cadena)).findFirst().orElse(null);
 	}
 
 	public Integer getTamanio() {
@@ -53,8 +53,10 @@ public class Carpeta {
 		return this.emails.size();
 	}
 	
-	public void cantEmailsCategorias(BagImplCorregido<String> categorias) {
+	public BagImplCorregido<String> cantidadEmailPorCategoria(){
+		BagImplCorregido<String> categorias = new BagImplCorregido<String>();
 		emails.stream().forEach(e->categorias.add(e.clasificacion()));
+		return categorias;
 	}
 	
 	//Nota_ se usa "ForEach" porque es una operacion terminal que consume un Stream. Usar map seria incorrecto por no ser terminal y no asegurar correcto funcionamiento

@@ -1,6 +1,7 @@
 package ar.edu.unlp.oo1.ejercicio14.impl;
 
 import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 
 public class DateLapse implements Lapse {
 	
@@ -25,19 +26,18 @@ public class DateLapse implements Lapse {
 	
 	public int sizeInDays() {
 		//“retorna la cantidad de días entre la fecha 'from' y la fecha 'to'”
-		return from.until(to).getDays();
+		return (int) ChronoUnit.DAYS.between(from, to);
 	}
 	
 	public boolean includesDate(LocalDate other) {
 		//	“recibe un objeto LocalDate y retorna true si la fecha está entre el from y el to del receptor y false en caso contrario, incluyendo extremos”.
-		return from.isBefore(other)&&to.isAfter(other)||from.isEqual(other)||to.isEqual(other);
+		return  !from.isAfter(other) && !to.isBefore(other);
 	}
 
 	//para ej17
 	@Override
 	public boolean overlaps(DateLapse lapso) {
-		return (this.includesDate(lapso.getFrom())||this.includesDate(lapso.getTo()));
+		 return this.includesDate(lapso.getFrom()) || this.includesDate(lapso.getTo()) ||
+		           lapso.includesDate(this.getFrom()) || lapso.includesDate(this.getTo());
 	}
-
-	
 }

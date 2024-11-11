@@ -1,15 +1,8 @@
 package ar.edu.unlp.oo1.ejercicio17.impl;
 
-public class Estricta extends PoliticaCancelacion {
-
-
-	public Estricta(String descripcion) {
-		super(descripcion);
-		// TODO Auto-generated constructor stub
-	}
-
+public class Estricta implements PoliticaCancelacion {
 	@Override
-	public double calcularReembolso(Reserva r) {
+	public double montoReembolso(Reserva r) {
 		// TODO Auto-generated method stub
 		return 0;
 	}

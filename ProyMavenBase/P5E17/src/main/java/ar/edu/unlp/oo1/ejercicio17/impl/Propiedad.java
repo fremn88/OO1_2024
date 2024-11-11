@@ -22,22 +22,6 @@ public class Propiedad {
 		reservas = new ArrayList<Reserva>();
 	}
 
-	public String getNombre() {
-		return nombre;
-	}
-
-	public String getDireccion() {
-		return direccion;
-	}
-
-	public double getPrecioNoche() {
-		return precioNoche;
-	}
-
-	public List<Reserva> getReservas() {
-		return reservas;
-	}
-	
 	public void addReserva(Reserva r) {
 		reservas.add(r);
 	}
@@ -54,15 +38,31 @@ public class Propiedad {
 		this.politica = politica;
 	}
 	
+	public double reembolso(Reserva r) {
+		return politica.montoReembolso(r);
+	}
+	
+	public boolean estoyDisponible(DateLapse l) {
+		return !reservas.stream().anyMatch(r->r.getPeriodoReserva().overlaps(l));
+	}
+	
 	public PoliticaCancelacion getPolitica() {
 		return this.politica;
 	}
 	
-	public double reembolso(Reserva r) {
-		return politica.calcularReembolso(r);
+	public String getNombre() {
+		return nombre;
 	}
-	
-	public boolean estoyDisponible(DateLapse l) {
-		return !reservas.stream().anyMatch(r->r.getPeriodoReserva().overlaps(l)==true);
+
+	public String getDireccion() {
+		return direccion;
+	}
+
+	public double getPrecioNoche() {
+		return precioNoche;
+	}
+
+	public List<Reserva> getReservas() {
+		return reservas;
 	}
 }

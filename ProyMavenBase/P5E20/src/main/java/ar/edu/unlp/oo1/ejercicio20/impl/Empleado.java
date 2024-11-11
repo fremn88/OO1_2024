@@ -29,34 +29,6 @@ public class Empleado {
 		return reciboMes;
 	}
 	
-	public String getNombre() {
-		return nombre;
-	}
-
-	public String getApellido() {
-		return apellido;
-	}
-
-	public LocalDate getFechaNac() {
-		return fechaNac;
-	}
-
-	public boolean isHijosTiene() {
-		return hijosTiene;
-	}
-
-	public Integer getCUIL() {
-		return CUIL;
-	}
-
-	public List<Contrato> getContratos() {
-		return contratos;
-	}
-
-	public void agregarContrato(Contrato c) {
-		this.contratos.add(c);
-	}
-	
 	private double antiguedad() {
 		double antiguedad = 0;
 		if(!contratos.isEmpty()) {
@@ -87,4 +59,35 @@ public class Empleado {
 	private Contrato vigente() {
 		return this.contratos.stream().filter(c->c.activo()).findFirst().orElseGet(null);
 	}
+	
+	public void agregarContrato(Contrato c) {
+		this.contratos.add(c);
+	}
+	
+	//Getters y Setters
+	
+	public String getNombre() {
+		return nombre;
+	}
+
+	public String getApellido() {
+		return apellido;
+	}
+
+	public LocalDate getFechaNac() {
+		return fechaNac;
+	}
+
+	public boolean isHijosTiene() {
+		return hijosTiene;
+	}
+
+	public Integer getCUIL() {
+		return CUIL;
+	}
+
+	public List<Contrato> getContratos() {
+		return contratos;
+	}
+	
 }

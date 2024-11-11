@@ -1,0 +1,35 @@
+usuarios reservan y alquilan inmuebles
+usuarios: nombre,direccion,DNI,propiedades
+propiedad: direccion,nombre,precioNoche
+usuarios puden hacer reservas de cualquier propiedad
+*reserva: periodo tiempo ??usuari??
+implementacion
+
+*consultar disponibilidad propiedad en periodo
+Dado: propiedad, fechaIni, fechaFin.
+Devuelve si esta disponible o no.
+//metodo en propiedad recibe fecha in y fin. crea un datelapse, luego mediante stream verifica si hay overlap en alguna de sus reservas.
+
+*Crear reserva
+Dado: usuario, periodo
+Si la propiedad esta disponible en el periodo, se crea reserva y la propiedad pasa a estar ocupada en ese periodo. Si no esta disponible, no se crea reserva.
+//metodo en usuario recibe un periodo y una propiedad
+//evaluea con merodo anterior si hay disponiblidad. Crea una reserva y la agrega a la propiedad.
+??la reserva debe tener usuario??
+
+*Calcular precio reserva
+Dado: reserva
+Se calcula su precio. CantNoches*precioNoche
+//metodo en reserva: recibe como parametro precioNoche, devuelve un Real
+
+*Cancelar reserva
+Dado: ? reserva
+La propiedad pasa a estar disponible en el periodo.
+Solo se permite cancelar si no esta en curso la reserva
+//metodo en usuario recibe un periodo y propiedad
+verifica que el periodo de reserva no incluya la fecha actual, luego hace un remove de la lista de reservas (si fuese una reserva que no existe para esa propiedad, le metodo no devuelve erro, directamente no hace nada
+
+*Calcular ingresos propietario
+Dado: usuario, periodo
+calcula la retribucion total del propietario, es el 75% de la suma de precios totales de las reservas incluidas en un periodo especifico.
+
