@@ -5,8 +5,14 @@ import java.time.LocalDate;
 public abstract class Contrato {
 	
 	protected LocalDate fechaIni;
+	protected Empleado empleado;
 	
-	public abstract double remuneracion(boolean tieneHijos);
+	public Contrato(LocalDate fechaIni, Empleado empleado) {
+		super();
+		this.fechaIni = fechaIni;
+		this.empleado = empleado;
+	}
+	public abstract double remuneracion();
 	public abstract int duracion();
 	
 	public boolean activo() {

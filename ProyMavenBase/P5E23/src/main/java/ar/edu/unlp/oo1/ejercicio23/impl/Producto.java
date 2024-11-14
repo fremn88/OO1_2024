@@ -6,9 +6,9 @@ public class Producto {
 	private double precio;
 	private Integer stock;
 	private Categoria categoria;
-	private Vendedor ven;
+	private Usuario ven;
 	
-	public Producto(String nombre, double precio, Integer stock, Categoria categoria, Vendedor ven) {
+	public Producto(String nombre, double precio, Integer stock, Categoria categoria, Usuario ven) {
 		super();
 		this.nombre = nombre;
 		this.precio = precio;
@@ -41,7 +41,7 @@ public class Producto {
 		return categoria;
 	}
 
-	public Vendedor getVen() {
+	public Usuario getVen() {
 		return ven;
 	}
 	

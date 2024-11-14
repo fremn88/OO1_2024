@@ -9,9 +9,15 @@ public class ContratoHora extends Contrato {
 	private LocalDate fechaFin;
 	private double valorHora, horasMes;
 
+	public ContratoHora(LocalDate fechaIni, Empleado empleado, LocalDate fechaFin, double valorHora, double horasMes) {
+		super(fechaIni, empleado);
+		this.fechaFin = fechaFin;
+		this.valorHora = valorHora;
+		this.horasMes = horasMes;
+	}
 
 	@Override
-	public double remuneracion(boolean tieneHijos) {
+	public double remuneracion() {
 		return valorHora*horasMes;
 	}
 

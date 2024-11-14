@@ -9,18 +9,20 @@ public class Empleado {
 	private String nombre, apellido;
 	private LocalDate fechaNac;
 	private boolean hijosTiene;
+	private boolean conyugeTiene;
 	private Integer CUIL;
 	private List<Contrato> contratos;
 	
 	
 	
-	public Empleado(String nombre, String apellido, LocalDate fechaNac, boolean hijosTiene, Integer cUIL) {
+	public Empleado(String nombre, String apellido, LocalDate fechaNac, boolean hijosTiene, boolean conyugue, Integer CUIL) {
 		super();
 		this.nombre = nombre;
 		this.apellido = apellido;
 		this.fechaNac = fechaNac;
 		this.hijosTiene = hijosTiene;
-		CUIL = cUIL;
+		this.conyugeTiene = conyugue;
+		this.CUIL = CUIL;
 		contratos = new ArrayList<Contrato>();
 	}
 
@@ -41,7 +43,7 @@ public class Empleado {
 		Contrato activo = vigente();
 		double monto = 0;
 		if(activo!=null) {
-			monto = activo.remuneracion(hijosTiene);
+			monto = activo.remuneracion();
 			double ant = antiguedad();
 			if(ant>=20) {
 				monto*=2;
@@ -88,6 +90,10 @@ public class Empleado {
 
 	public List<Contrato> getContratos() {
 		return contratos;
+	}
+
+	public boolean isConyugeTiene() {
+		return conyugeTiene;
 	}
 	
 }

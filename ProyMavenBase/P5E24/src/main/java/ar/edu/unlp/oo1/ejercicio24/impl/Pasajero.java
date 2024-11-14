@@ -5,7 +5,7 @@ import java.time.LocalDate;
 public class Pasajero extends Usuario {
 
 	public Pasajero(String nombre, double saldo) {
-		super(nombre, saldo);
+		super(nombre);
 		// TODO Auto-generated constructor stub
 	}
 
@@ -16,7 +16,7 @@ public class Pasajero extends Usuario {
 	}
 	
 	public void registrarViaje(Viaje viaje) {
-		if(viaje.getVehiculo().getCapacidad()>0 && this.saldo > 0 && viaje.getFecha().isAfter(LocalDate.now().plusDays(2))) {
+		if(viaje.getVehiculo().tieneLugar() && this.saldo > 0 && viaje.getFecha().isAfter(LocalDate.now().plusDays(2))) {
 			viaje.agregarPasajero(this);
 		}
 	}

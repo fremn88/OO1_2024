@@ -4,8 +4,8 @@ import java.time.LocalDate;
 
 public class Conductor extends Usuario {
 	
-	public Conductor(String nombre, double saldo) {
-		super(nombre, saldo);
+	public Conductor(String nombre) {
+		super(nombre);
 		// TODO Auto-generated constructor stub
 	}
 

@@ -9,10 +9,9 @@ public abstract class Usuario {
 	protected double saldo;
 	protected List<Viaje> viajes;
 	
-	public Usuario(String nombre, double saldo) {
-		super();
+	public Usuario(String nombre) {
 		this.nombre = nombre;
-		this.saldo = saldo;
+		this.saldo = 0;
 		this.viajes = new ArrayList<Viaje>();
 	}
 	

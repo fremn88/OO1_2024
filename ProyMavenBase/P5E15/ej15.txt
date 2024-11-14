@@ -1,0 +1,12 @@
+*usuarios: nombre,domicilio(unico),consumos
+*facturas: nombre,fechaEmision,bonificacion(si aplica),montoFinal
+*consumos=enAct(con costo)+enReac(sin costo, para calculo bonificacion)
+*cuadroTarifario: precio kwh (puede ser ajustado perodicamente)
+*Para emitir factura se cuenta solo el ultimo consumo registrado
+
+montoFinal: se calcula restando la bonificacion al consumo.
+costoConsumo=consumo*precioKwh
+bonificacion=10% si factorPotencia>0.8
+
+
+

@@ -4,7 +4,7 @@ public class Vehiculo {
 
 	private Conductor conductor;
 	private String descripcion;
-	private Integer capacidad, anio, valor;
+	private Integer capacidad, anio, valor, ocupacion;
 	
 	public Vehiculo(String descripcion, Integer capacidad, Integer anio, Integer valor, Conductor conductor) {
 		super();
@@ -13,6 +13,7 @@ public class Vehiculo {
 		this.anio = anio;
 		this.valor = valor;
 		this.conductor = conductor;
+		this.ocupacion = 1;
 	}
 
 	public Conductor getConductor() {
@@ -35,16 +36,21 @@ public class Vehiculo {
 		return valor;
 	}
 
-	public boolean disminuirCapacidad() {
-		if(capacidad == 0) {
-			return false;
-		} else {
-			capacidad -= 1;
-			return true;
-		}
+	public Integer getOcupacion() {
+		return ocupacion;
+	}
+
+	public void disminuyeOcupacion(Integer cant) {
+		ocupacion-=cant;
 	}
 	
-	public void incrementarCapacidad(Integer cant) {
-		capacidad += cant;
+	public void incrementarOcupacion() {
+		ocupacion++;
+	}
+	
+	public boolean tieneLugar() {
+		if(ocupacion==capacidad) {
+			return false;
+		} else return true;
 	}
 }

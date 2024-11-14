@@ -2,7 +2,9 @@ package ar.edu.unlp.oo1.ejercicio22.impl;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
+import ar.edu.unlp.oo1.ejercicio21.impl.Bag;
 import ar.edu.unlp.oo1.ejercicio21.impl.BagImplCorregido;
 
 public class Carpeta {
@@ -53,11 +55,15 @@ public class Carpeta {
 		return this.emails.size();
 	}
 	
-	public BagImplCorregido<String> cantidadEmailPorCategoria(){
+	public Bag<String> cantidadEmailPorCategoria(){
 		BagImplCorregido<String> categorias = new BagImplCorregido<String>();
-		emails.stream().forEach(e->categorias.add(e.clasificacion()));
+		//emails.stream().forEach(e->categorias.add(e.clasificacion())); esto no se considera correcto, es mas prolijo generar stream de clasificaciones y trabajar con eso
+		//opcion 1:
+		emails.stream().map(e->e.clasificacion()).forEach(c->categorias.add(c));
+		//opcion 2:
+		//BagImplCorregido<String> categorias = emails.stream().map(e->e.clasificacion()).collect(Collectors.toCollection(() -> new BagImplCorregido<>()));
 		return categorias;
 	}
 	
-	//Nota_ se usa "ForEach" porque es una operacion terminal que consume un Stream. Usar map seria incorrecto por no ser terminal y no asegurar correcto funcionamiento
+	
 }

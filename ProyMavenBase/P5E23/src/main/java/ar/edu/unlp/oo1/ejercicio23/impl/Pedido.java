@@ -6,15 +6,15 @@ public class Pedido {
 	private FormaEnvio envio;
 	private FormaPago pago;
 	private Integer cantidad;
-	private Cliente cli;
+	private Usuario cli;
 	
-	public Pedido(Producto producto, FormaEnvio envio, FormaPago pago, Integer cantidad, Cliente cli) {
+	public Pedido(Producto producto, FormaEnvio envio, FormaPago pago, Integer cantidad, Usuario u) {
 		super();
 		this.producto = producto;
 		this.envio = envio;
 		this.pago = pago;
 		this.cantidad = cantidad;
-		this.cli = cli;
+		this.cli = u;
 	}
 	
 	public double costo() {
@@ -37,7 +37,7 @@ public class Pedido {
 		return cantidad;
 	}
 
-	public Cliente getCli() {
+	public Usuario getCli() {
 		return cli;
 	}
 	

@@ -28,13 +28,12 @@ public class Viaje {
 	public void procesarViaje(Viaje viaje) {
 		if(!procesado) {
 			//calculo monto bruto para todos
-			double integrantes = pasajeros.size() + 1;
+			Integer integrantes = pasajeros.size() + 1;
 			double montoBruto = costo/integrantes;
 			//??descuento el monto cada uno sabe su bonificacion (esta bien pasar vehiculo a conductor si no lo usa??
-			this.pasajeros.stream().forEach(p->p.gastarSaldo(montoBruto, vehiculo)); //?? Esta ok usar foreach??
+			this.pasajeros.stream().forEach(p->p.gastarSaldo(montoBruto, vehiculo)); //?? Esta ok usar foreach?? Deberia, porque la coleccion la obtengo de este objeto
 			vehiculo.getConductor().gastarSaldo(montoBruto, vehiculo);
-			//actualizo capacidad vehiculo
-			vehiculo.incrementarCapacidad(pasajeros.size());
+			vehiculo.disminuyeOcupacion(integrantes - 1);
 			//marco procesado
 			procesado = true;
 		}
@@ -66,10 +65,12 @@ public class Viaje {
 	
 	public void agregarPasajero(Pasajero p) {
 		pasajeros.add(p);
+		vehiculo.incrementarOcupacion();
 	}
 	
 	public void eliminarPasajero(Pasajero p) {
 		pasajeros.remove(p);
+		vehiculo.disminuyeOcupacion(1);
 	}
 	
 }
